@@ -2,7 +2,7 @@ const express = require('express');
 const { createProxyMiddleware } = require('http-proxy-middleware');
 
 const app = express();
-
+const port = process.env.PORT || 3000;
 const targetServer = 'https://vanoe325lpp.com'; 
 //https://vanoe325lpp.com/play/tt9389998?d=pikachu.app&?sinku
 //https://vanoe325lpp.com/play/stt9140554?d=pikachu.app&?sinku&noseasons=1&noepisodes=1
@@ -29,7 +29,6 @@ app.use(
     })
 );
 
-const port = 3000;
 app.listen(port, () => {
     console.log(`Proxy server running on http://localhost:${port}`);
 });
